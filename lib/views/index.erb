@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>The Gossip Project</title>
+  </head>
+  <body>
+    <h1>Mon super site de gossip</h1>
+    
+    <ul>
+      <li>Depuis le dossier views !</li>
+      <li>Mis à jour en direct grâce à la gem shotgun</li>
+      <li>Avec tout bien rangé qui plus est !</li>
+    </ul>
+  
+    <h2>Sans plus attendre : les potins !</h2>
+    
+    <% gossips.each_with_index do |gossip, index| %>
+      <p>
+        <%= gossip.author %><br/>
+        <%= gossip.content %><br/>
+        <span><a href="http://localhost:4567/gossips/<%= index %>/">lien url</a></span>
+      </p>
+    <% end %>
+  </body>
+</html>

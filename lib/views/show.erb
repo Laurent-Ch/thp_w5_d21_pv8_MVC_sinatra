@@ -1,0 +1,14 @@
+<h1>PAGE POTIN</h1>
+<br />
+
+<h2>Voici la page du potin n° <%= params['id'] %></h2>
+
+<% result = Gossip.find(params['id']) %>
+<ul>
+  <li>Son auteur : <%= result[0] %> </li>
+  <li>Le contenu du potin: <%= result[1] %></li>
+</ul>
+
+<p>Si vous voulez éditer ce potin, c'est <a href="http://localhost:4567/gossips/id/edit/">par là</a>.</p>
+
+<a href="http://localhost:4567/">page d'acceuil</a>
