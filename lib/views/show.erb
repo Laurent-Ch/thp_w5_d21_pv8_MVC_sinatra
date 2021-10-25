@@ -12,3 +12,27 @@
 <p>Si vous voulez éditer ce potin, c'est <a href="http://localhost:4567/gossips/id/edit/">par là</a>.</p>
 
 <a href="http://localhost:4567/">page d'acceuil</a>
+
+<p>Commentaires</p>
+
+ <% comments = Comment.all(params['id']) %>
+
+<% comments.each do |comment| %>
+      <p>
+        <%= comment.author %><br/>
+        <%= comment.content %><br/>
+      </p>
+    <% end %>
+
+
+<p>Rajouter un commentaire</p>
+ <p>Écris ton propre commentaire ci-dessous</p>
+    <form action='/gossips/<%= params['id'] %>/' method='POST'>
+      Ton nom :  <input type='text' name='comment_author'/><br/>
+      Ton commentaire : <input type='text' name='comment_content'/><br/>
+      <input type='submit'/>
+    </form>
+
+
+
+<!-- Formulaire -->

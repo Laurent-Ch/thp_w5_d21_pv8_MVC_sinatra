@@ -5,9 +5,9 @@ class Gossip
   
   attr_accessor :author, :content
 
-  def initialize(author_input, content_input)
-    @author = author_input
-    @content = content_input
+  def initialize(author, content)
+    @author = author
+    @content = content
   end
 
   def save   
@@ -40,7 +40,7 @@ class Gossip
     number_int = number.to_i
     edited_gossip = [new_author, new_text]
     # Put content of current csv file into temporary array
-    puts rows_array = CSV.read("./db/gossip.csv")
+    rows_array = CSV.read("./db/gossip.csv")
     # Edit the targeted row
     rows_array.each.with_index do |row, index| 
       if index == number_int
